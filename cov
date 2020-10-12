@@ -1,0 +1,22 @@
+This patch series adds RISC-V compatibility content to EBBR.
+The additional content is not a lot given that we just need to update the
+architecture specific sections for RISC-V. Rest of the document is ISA agnostic
+anyways. I am not sure about the copyrights though. There are two places where
+copyrights are present. I have added Western Digital copyright for the index.rst
+but I have not added it for conf.py as it goes into the first page of the EBBR
+specification. 
+
+Should we add multiple lines of copyrights or just keep copyrights
+at one place ? I am open to any other suggestions as well.
+
+The series is also available in my github repo.
+
+https://github.com/atishp04/ebbr/tree/riscv_update
+
+Changes from v1->v2:
+1. Added ACPI todo list.
+2. Removed efistub requirements as that is linux specific.
+3. Fix typos.
+
+option-subject Add RISC-V specific content 
+option-prefix PATCH v2
