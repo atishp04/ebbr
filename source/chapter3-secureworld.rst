@@ -27,3 +27,17 @@ Platforms without EL3 must implement one of:
 However, the spin table protocol is strongly discouraged.
 Future versions of this specification will only allow PSCI, and PSCI should
 be implemented in all new designs.
+
+
+RISC-V Multiprocessor Startup protocol
+======================================
+The firmware resident in M-mode or hypervisor running in HS mode must implement
+and conform to at least Supervisor Binary Specification [SBI]_ v0.2 with HART
+State Management(HSM) extension for both RV32 and RV64. In addition to that, the
+firmware must ensure the following condition before jumping to the UEFI
+application.
+
+- The device tree must contain a property named **boot-hartid** under the */chosen*
+  node. This property must indicate the  id of the booting hart. There is no support
+  for ACPI in RISC-V yet. That's why, passing of the boot hart id via ACPI tables
+  has not been defined yet.

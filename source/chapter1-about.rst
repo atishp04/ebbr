@@ -152,9 +152,10 @@ operating system.
 SBBR is targeted at the server ecosystem and places strict requirements on the
 platform to ensure cross vendor interoperability.
 EBBR on the other hand allows more flexibility to support embedded designs
-which do not fit within the SBBR model.
-For example, a platform that isn't SBBR compliant because the SoC is only
+which do not fit within the SBBR model. For example, a platform that isn't SBBR compliant because the SoC is only
 supported using Devicetree could be EBBR compliant, but not SBBR compliant.
+EBBR also supports multiple architectures such as AArch64 & RISC-V. However, RISC-V
+is not compatible with SBBR. Thus, a EBBR compliant RISC-V platform would not be SBBR compliant.
 
 By definition, all SBBR compliant systems are also EBBR compliant, but the
 converse is not true.
@@ -227,6 +228,43 @@ This document uses the following terms and abbreviations.
    OEM
       Original Equipment Manufacturer. In this document, the final device
       manufacturer.
+
+   RISC-V
+      An open standard Instruction Set Architecture (ISA) based on Reduced Instruction
+      Set Architecture (RISC).
+
+   HART
+      Hardware thread in RISC-V. This is the hardware execution context that contains
+      all the state mandated by the ISA.
+
+   M Mode
+      Machine mode is the most secure and privileged mode in RISC-V.
+
+   S Mode
+      Supervisor mode is the next secure mode where virtual memory is enabled.
+
+   HS Mode
+      Hypervisor-extended-supervisor mode which virtualizes the supervisor mode.
+
+   U Mode
+      User mode where userspace application is expected to run.
+
+   HSM
+      Hart State Management (HSM) is an SBI extension that enables the supervisor
+      mode software to implement ordered booting.
+
+   SEE
+      Supervisor Execution Environment in RISC-V. This can be M mode or HS mode.
+
+   SBI
+      Supervisor Binary Interface. This is an interface between SEE and supervisor
+      mode in RISC-V.
+
+   RV32
+      32 bit execution mode in RISC-V.
+
+   RV64
+      64 bit execution mode in RISC-V.
 
    SiP
       Silicon Partner. In this document, the silicon manufacturer.

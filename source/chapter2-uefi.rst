@@ -36,7 +36,7 @@ Resident UEFI firmware might target a specific privilege level.
 In contrast, UEFI Loaded Images, such as third-party drivers and boot
 applications, must not contain any built-in assumptions that they are to be
 loaded at a given privilege level during boot time since they can, for example,
-legitimately be loaded into either EL1 or EL2 on AArch64.
+legitimately be loaded into either EL1 or EL2 on AArch64 and HS or S mode in RISC-V.
 
 AArch64 Exception Levels
 ------------------------
@@ -58,6 +58,14 @@ Operating System environment, to allow the subsequent booting of a
 UEFI-compliant Operating System.
 In this instance, the UEFI boot-time environment can be provided, as a
 virtualized service, by the hypervisor and not as part of the host firmware.
+
+RISC-V privilege levels
+-----------------------
+
+UEFI shall execute in RV32/RV64 mode either in S or HS mode depending on whether
+or not virtualization is supported in hardware and available at OS load time.
+If the UEFI firmware is running in HS mode, the hypervisor is responsible for
+providing the virtualized boot-time/runtime services.
 
 UEFI Boot Services
 ==================

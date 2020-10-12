@@ -23,3 +23,7 @@
 .. [UEFI] `Unified Extensable Firmware Interface Specification v2.8 Errata A
    <https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_A_Feb14.pdf>`_,
    February 2020, `UEFI Forum <http://www.uefi.org>`_
+
+.. [SBI] `Supervisor Binary Interface (SBI)
+      <https://github.com/riscv/riscv-sbi-doc/blob/master/riscv-sbi.adoc>`_
+      11 October 2020, `RISC-V International <https://riscv.org/>`_
